@@ -3,8 +3,11 @@ services:
     container_name: homeassistant
     image: ghcr.io/home-assistant/home-assistant:stable
     volumes:
-      - ./config:/config
+      - homeassistant_config:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     privileged: true
     network_mode: host
+
+volumes:
+  homeassistant_config:
