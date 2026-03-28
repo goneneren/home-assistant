@@ -5,9 +5,12 @@ services:
     volumes:
       - homeassistant_config:/config
       - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8123:8123"
+      - "38899:38899/udp"
+      - "38900:38900/udp"
     restart: unless-stopped
     privileged: true
-    network_mode: host
 
 volumes:
   homeassistant_config:

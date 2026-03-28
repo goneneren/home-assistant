@@ -1,0 +1,41 @@
+{
+  "id": "ac04_set_fan_medium_low",
+  "alias": "AC_04 Set Fan to Medium Low (09:00-21:00)",
+  "description": "When AC_04 is turned on or fan speed changes, set fan to Medium Low after 5 min",
+  "triggers": [
+    {
+      "trigger": "state",
+      "entity_id": "climate.ac_04",
+      "from": "off",
+      "not_to": ["off", "unavailable", "unknown"]
+    },
+    {
+      "trigger": "state",
+      "entity_id": "climate.ac_04",
+      "attribute": "fan_mode",
+      "not_to": ["Medium Low", null]
+    }
+  ],
+  "conditions": [
+    {"condition": "time", "after": "09:00:00", "before": "21:00:00"},
+    {
+      "condition": "not",
+      "conditions": [{"condition": "state", "entity_id": "climate.ac_04", "state": "off"}]
+    }
+  ],
+  "actions": [
+    {"delay": {"minutes": 5}},
+    {
+      "condition": "not",
+      "conditions": [
+        {"condition": "state", "entity_id": "climate.ac_04", "attribute": "fan_mode", "state": "Medium Low"}
+      ]
+    },
+    {
+      "action": "climate.set_fan_mode",
+      "target": {"entity_id": "climate.ac_04"},
+      "data": {"fan_mode": "Medium Low"}
+    }
+  ],
+  "mode": "restart"
+}

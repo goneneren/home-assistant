@@ -1,0 +1,29 @@
+{
+  "id": "ac02_auto_off_2h",
+  "alias": "AC_02 Auto-off after 2h (09:00-21:00)",
+  "description": "If AC_02 is turned on between 09:00 and 21:00, turn it off after 2 hours",
+  "triggers": [
+    {
+      "platform": "state",
+      "entity_id": "climate.ac_02",
+      "from": "off",
+      "not_to": ["off", "unavailable", "unknown"]
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "time",
+      "after": "09:00:00",
+      "before": "21:00:00"
+    }
+  ],
+  "actions": [
+    {"delay": {"hours": 2}},
+    {
+      "condition": "not",
+      "conditions": [{"condition": "state", "entity_id": "climate.ac_02", "state": "off"}]
+    },
+    {"target": {"entity_id": "climate.ac_02"}, "action": "climate.turn_off"}
+  ],
+  "mode": "restart"
+}
