@@ -14,3 +14,9 @@ scene: !include scenes.yaml
 
 shell_command:
   toshiba_reauth: python3 /config/toshiba_reauth.py
+
+logger:
+  default: warning
+  filters:
+    azure.iot.device.common.handle_exceptions:
+      - "Exception caught in background thread"
