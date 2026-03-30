@@ -20,3 +20,5 @@ logger:
   filters:
     azure.iot.device.common.handle_exceptions:
       - "Exception caught in background thread"
+    homeassistant.components.switch:
+      - "does not generate unique IDs"
