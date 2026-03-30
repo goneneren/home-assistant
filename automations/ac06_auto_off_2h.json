@@ -1,11 +1,11 @@
 {
-    "id": "ac04_auto_off_2h",
-    "alias": "AC_04 Auto-off after 2h (08:00-21:00)",
-    "description": "If AC_04 is turned on between 09:00 and 21:00, turn it off after 2 hours",
+    "id": "ac06_auto_off_2h",
+    "alias": "AC_06 Auto-off after 2h (08:00-21:00)",
+    "description": "If AC_06 is turned on between 09:00 and 21:00, turn it off after 2 hours",
     "triggers": [
         {
             "platform": "state",
-            "entity_id": "climate.ac_04",
+            "entity_id": "climate.ac_06",
             "from": "off",
             "not_to": [
                 "off",
@@ -36,14 +36,14 @@
             "conditions": [
                 {
                     "condition": "state",
-                    "entity_id": "climate.ac_04",
+                    "entity_id": "climate.ac_06",
                     "state": "off"
                 }
             ]
         },
         {
             "target": {
-                "entity_id": "climate.ac_04"
+                "entity_id": "climate.ac_06"
             },
             "action": "climate.turn_off"
         }

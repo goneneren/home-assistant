@@ -1,0 +1,248 @@
+{
+    "alias": "All ACs - Set Low Fan",
+    "description": "Sets fan to Low on all ACs that are currently running (not off/unavailable)",
+    "sequence": [
+        {
+            "if": [
+                {
+                    "condition": "not",
+                    "conditions": [
+                        {
+                            "condition": "state",
+                            "entity_id": "climate.ac_01",
+                            "state": [
+                                "off",
+                                "unavailable",
+                                "unknown"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "then": [
+                {
+                    "action": "climate.set_fan_mode",
+                    "target": {
+                        "entity_id": "climate.ac_01"
+                    },
+                    "data": {
+                        "fan_mode": "Low"
+                    },
+                    "continue_on_error": true
+                }
+            ]
+        },
+        {
+            "if": [
+                {
+                    "condition": "not",
+                    "conditions": [
+                        {
+                            "condition": "state",
+                            "entity_id": "climate.ac_02",
+                            "state": [
+                                "off",
+                                "unavailable",
+                                "unknown"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "then": [
+                {
+                    "action": "climate.set_fan_mode",
+                    "target": {
+                        "entity_id": "climate.ac_02"
+                    },
+                    "data": {
+                        "fan_mode": "Low"
+                    },
+                    "continue_on_error": true
+                }
+            ]
+        },
+        {
+            "if": [
+                {
+                    "condition": "not",
+                    "conditions": [
+                        {
+                            "condition": "state",
+                            "entity_id": "climate.ac_04",
+                            "state": [
+                                "off",
+                                "unavailable",
+                                "unknown"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "then": [
+                {
+                    "action": "climate.set_fan_mode",
+                    "target": {
+                        "entity_id": "climate.ac_04"
+                    },
+                    "data": {
+                        "fan_mode": "Low"
+                    },
+                    "continue_on_error": true
+                }
+            ]
+        },
+        {
+            "if": [
+                {
+                    "condition": "not",
+                    "conditions": [
+                        {
+                            "condition": "state",
+                            "entity_id": "climate.ac_05",
+                            "state": [
+                                "off",
+                                "unavailable",
+                                "unknown"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "then": [
+                {
+                    "action": "climate.set_fan_mode",
+                    "target": {
+                        "entity_id": "climate.ac_05"
+                    },
+                    "data": {
+                        "fan_mode": "Low"
+                    },
+                    "continue_on_error": true
+                }
+            ]
+        },
+        {
+            "if": [
+                {
+                    "condition": "not",
+                    "conditions": [
+                        {
+                            "condition": "state",
+                            "entity_id": "climate.ac_06",
+                            "state": [
+                                "off",
+                                "unavailable",
+                                "unknown"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "then": [
+                {
+                    "action": "climate.set_fan_mode",
+                    "target": {
+                        "entity_id": "climate.ac_06"
+                    },
+                    "data": {
+                        "fan_mode": "Low"
+                    },
+                    "continue_on_error": true
+                }
+            ]
+        },
+        {
+            "if": [
+                {
+                    "condition": "not",
+                    "conditions": [
+                        {
+                            "condition": "state",
+                            "entity_id": "climate.ac_07",
+                            "state": [
+                                "off",
+                                "unavailable",
+                                "unknown"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "then": [
+                {
+                    "action": "climate.set_fan_mode",
+                    "target": {
+                        "entity_id": "climate.ac_07"
+                    },
+                    "data": {
+                        "fan_mode": "Low"
+                    },
+                    "continue_on_error": true
+                }
+            ]
+        },
+        {
+            "if": [
+                {
+                    "condition": "not",
+                    "conditions": [
+                        {
+                            "condition": "state",
+                            "entity_id": "climate.ac_08",
+                            "state": [
+                                "off",
+                                "unavailable",
+                                "unknown"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "then": [
+                {
+                    "action": "climate.set_fan_mode",
+                    "target": {
+                        "entity_id": "climate.ac_08"
+                    },
+                    "data": {
+                        "fan_mode": "Low"
+                    },
+                    "continue_on_error": true
+                }
+            ]
+        },
+        {
+            "if": [
+                {
+                    "condition": "not",
+                    "conditions": [
+                        {
+                            "condition": "state",
+                            "entity_id": "climate.ac_10",
+                            "state": [
+                                "off",
+                                "unavailable",
+                                "unknown"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "then": [
+                {
+                    "action": "climate.set_fan_mode",
+                    "target": {
+                        "entity_id": "climate.ac_10"
+                    },
+                    "data": {
+                        "fan_mode": "Low"
+                    },
+                    "continue_on_error": true
+                }
+            ]
+        }
+    ],
+    "mode": "single",
+    "icon": "mdi:fan"
+}
